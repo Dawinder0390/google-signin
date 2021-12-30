@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--To create a responsive website,-->
+<style>
+.l_class {
+  background-color: white;
+  color: black;
+  padding: 2px;
+  text-align: center;
+  width: 150px;
+} 
+</style>
+
+</head>
+<body>
+
+<h2>Welcome  To Login Page</h2>
+<div><l class="l_class">UserName:</l>
+<input class="l_class" id="txtEmail"name="username"type="textbox" onchange="checkEmail(),login_enable_disable()" /></div>
+<div><l class="l_class">Password:</l>
+    <input class="l_class" id="password" name="password"  type="password" onchange="login_enable_disable()" />
+</div>
+<div><button  id="login_button" click=show_hide_fun() disabled=true></button></div>
+<script>
+
+function login_enable_disable(){
+    if(document.getElementById("txtEmail")  &&  document.getElementById("password") )      
+                                 {
+                                            document.getElementById("login_button").innerHTML = "Login";
+                                          document.getElementById("login_button").disabled=false ;
+                                  }  
+                    
+                    
+                    
+                    }
+function checkEmail() {
+
+var email = document.getElementById('txtEmail');
+var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+if (!filter.test(email.value)) {
+alert('Please provide a valid email address');
+email.focus;
+
+return false;
+
+}
+}
+
+
+</script>
+</body>
+</html>
